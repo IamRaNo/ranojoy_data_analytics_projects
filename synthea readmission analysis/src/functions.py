@@ -13,7 +13,10 @@ def get_engine(
     """Returns a SQLAlchemy engine for the MySQL database."""
     return create_engine(f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}")
 
-def sql(query , engine = None):
+
+eng = get_engine(database="synthea_medical_dataset")
+
+def sql(query , engine = eng):
     if engine is None:
         engine = get_engine()
     else:
@@ -25,9 +28,10 @@ def sql(query , engine = None):
             return None
 
 def select(table_name):
-    return sql(f'select * from {table_name} limit 5')
+    return pd.read_sql(f'select * from {table_name} limit 5',eng)
 
-def run(query,engine = None):
+
+def run(query,engine = eng):
     if engine is None:
         engine = get_engine()
     with engine.connect() as con:
@@ -40,7 +44,7 @@ def fetch_all_cols(table):
         where table_name = '{table}' and
         table_schema = database()
     '''
-    df = sql(query)
+    df = pd.read_sql(query,eng)
     return df['COLUMN_NAME'].values.tolist()
 
 def find_nulls(table):
