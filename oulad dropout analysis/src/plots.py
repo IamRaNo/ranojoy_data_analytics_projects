@@ -24,44 +24,12 @@ def plot_kde(column,data):
     sns.kdeplot(x = column,data =data)
     plt.title(f"Distribution of {column}",weight = 'bold')
 
-def percentage_in_that_class(column, data, target, orient=None):
-
-    df = (
-        data.groupby(column)[target]
-        .value_counts(normalize=True)
-        .mul(100)
-        .round(2)
-        .reset_index(name='percentage')
-    )
-
-    df[column] = df[column].astype('category')
-    df[target] = df[target].astype('category')
-
-    # automatic correct logic
-    if orient == "h":
-        ax = sns.barplot(
-            y=column, 
-            x='percentage', 
-            data=df, 
-            hue=target,
-            edgecolor='black',
-            palette='tab20'
-        )
-    else:  # default = vertical
-        ax = sns.barplot(
-            x=column, 
-            y='percentage', 
-            data=df, 
-            hue=target,
-            edgecolor='black',
-            palette='tab20'
-        )
-
-    for c in ax.containers:
-        ax.bar_label(c)
-
-    plt.title(f'Percentage of {column} across {target}')
-
+def percentage_in_that_class(column,data,target,orient):
+    df =data.groupby(column)[target].value_counts(normalize=True).mul(100).round(2).reset_index(name ='percentage_of_that_class')
+    ax = sns.barplot(x = column,y = 'percentage_of_that_class',data = df,hue= target,orient=orient,edgecolor = 'black',palette = 'tab20')
+    for container in ax.containers:
+        ax.bar_label(container)
+    plt.title(f'Percentage of {column} from each {target} class',weight = 'bold')
 
 
 def kde_in_both_class(column,data,target):
