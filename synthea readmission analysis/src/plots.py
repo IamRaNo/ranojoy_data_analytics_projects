@@ -98,7 +98,7 @@ def plot_heatmap(ct, annot=True, cmap="Blues"):
     sns.heatmap(ct, 
                 annot=annot, 
                 cmap=cmap, 
-                mt=".1f", 
+                fmt=".1f", 
                 linewidths=.5)
     plt.title("Crosstab Heatmap")
     plt.xlabel(ct.columns.name if ct.columns.name else "Columns")
