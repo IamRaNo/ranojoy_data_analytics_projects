@@ -6,6 +6,7 @@ import seaborn as sns
 
 # Defining all the necessary plots
 
+#______________________________________________________________________________
 # For Pie Chart of Single Column
 def plot_pie(column,data):
     df = (data[column].
@@ -27,6 +28,7 @@ def plot_pie(column,data):
             wedgeprops={'edgecolor':'white'})
     plt.title(f"Distribution of {column}",weight = 'bold')
 
+#______________________________________________________________________________
 # For KDE Plot os Single  Column
 def plot_kde(column,data):
     sns.kdeplot(x = column,
@@ -34,6 +36,7 @@ def plot_kde(column,data):
                 linewidth = 2)
     plt.title(f"Distribution of {column}",weight = 'bold')
 
+#______________________________________________________________________________
 # For Bar Plot of Categorical Type Column and Target Column
 def percentage_in_that_class(column, data, target, orient):
 
@@ -69,6 +72,7 @@ def percentage_in_that_class(column, data, target, orient):
 
     plt.title(f'Percentage of {column} from each {target} class', weight='bold')
 
+#______________________________________________________________________________
 # For KDE Plot in Different Target Classes
 def kde_in_all_class(column,data,target):
     sns.kdeplot(x = column,
@@ -77,6 +81,7 @@ def kde_in_all_class(column,data,target):
                 )
     plt.title(f"Distribution of {column} by {target}")
 
+#______________________________________________________________________________
 # For Box Plot in Different Target Classes
 def box_in_all_class(column,data,target):
     sns.boxplot(x = column,
@@ -85,6 +90,7 @@ def box_in_all_class(column,data,target):
                 )
     plt.title(f"Distribution of {column} by {target}")
 
+#______________________________________________________________________________
 # For Scatterplot in Different Target Classes
 def scatter_in_all_class(column,target,data):
     plt.scatterplot(x = column,
@@ -93,6 +99,7 @@ def scatter_in_all_class(column,target,data):
                     color = 'teal')
     plt.title(f"Scatter plot of {column} in all {target}")
 
+#______________________________________________________________________________
 # For Heatmap for Large Categorical Classes
 def plot_heatmap(ct, annot=True, cmap="Blues"):
     sns.heatmap(ct, 
