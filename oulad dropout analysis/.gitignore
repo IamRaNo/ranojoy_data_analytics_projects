@@ -1,2 +1,2 @@
-# data/processed_data/*.csv
-# data/raw_data/*.csv
+data/processed_data/*.csv
+data/raw_data/*.csv
