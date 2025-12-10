@@ -1,0 +1,16 @@
+2025-12-10 20:06:25,615 - INFO - Importing data from kaggle API
+2025-12-10 20:06:27,145 - INFO - Import Done, Time taken 1.53 seconds
+2025-12-10 20:06:32,157 - INFO - Loading table assessments with shape (206, 6)
+2025-12-10 20:06:32,298 - INFO - Loaded successfully: assessments, time taken 0.14 seconds
+2025-12-10 20:06:32,300 - INFO - Loading table courses with shape (22, 3)
+2025-12-10 20:06:32,373 - INFO - Loaded successfully: courses, time taken 0.07 seconds
+2025-12-10 20:06:32,441 - INFO - Loading table studentAssessment with shape (173912, 5)
+2025-12-10 20:06:36,824 - INFO - Loaded successfully: studentAssessment, time taken 4.38 seconds
+2025-12-10 20:06:36,876 - INFO - Loading table studentInfo with shape (32593, 12)
+2025-12-10 20:06:39,127 - INFO - Loaded successfully: studentInfo, time taken 2.25 seconds
+2025-12-10 20:06:39,146 - INFO - Loading table studentRegistration with shape (32593, 5)
+2025-12-10 20:06:40,404 - INFO - Loaded successfully: studentRegistration, time taken 1.26 seconds
+2025-12-10 20:06:44,882 - INFO - Loading table studentVle with shape (10655280, 6)
+2025-12-10 20:11:57,619 - INFO - Loaded successfully: studentVle, time taken 312.74 seconds
+2025-12-10 20:11:57,986 - INFO - Loading table vle with shape (6364, 6)
+2025-12-10 20:11:58,659 - INFO - Loaded successfully: vle, time taken 0.67 seconds

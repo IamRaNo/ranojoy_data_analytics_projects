@@ -5,9 +5,20 @@ import time
 import logging
 from sqlalchemy import create_engine
 
+# --- FIXING THE PATHS ---
+# 1. Get the directory where this script is located (src)
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# 2. Go UP one level to get the main project folder (synthea readmission analysis)
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+
+# 3. Now define paths relative to the Project Root
+LOG_DIR = os.path.join(PROJECT_ROOT, "logs")
+LOG_PATH = os.path.join(LOG_DIR, "oulad_data_upload.log")
+
 # logging config
 logging.basicConfig(
-    filename=r"C:\Users\Rano's PC\Machine\github_repo_cloned\my-personal-projects\oulad dropout analysis\logs\oulad_data_upload_logs.log",
+    filename=LOG_PATH,
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )

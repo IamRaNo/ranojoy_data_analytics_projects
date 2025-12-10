@@ -1,0 +1,20 @@
+2025-12-10 20:13:57,965 - INFO - Importing data from kaggle API
+2025-12-10 20:13:59,321 - INFO - Import Done, Time taken 1.35 seconds
+2025-12-10 20:14:01,884 - INFO - Loading table olist_customers_dataset with shape (99441, 5)
+2025-12-10 20:14:07,056 - INFO - Loaded successfully: olist_customers_dataset, time taken 5.17 seconds
+2025-12-10 20:14:07,910 - INFO - Loading table olist_geolocation_dataset with shape (1000163, 5)
+2025-12-10 20:14:39,065 - INFO - Loaded successfully: olist_geolocation_dataset, time taken 31.15 seconds
+2025-12-10 20:14:39,443 - INFO - Loading table olist_orders_dataset with shape (99441, 8)
+2025-12-10 20:14:45,465 - INFO - Loaded successfully: olist_orders_dataset, time taken 6.02 seconds
+2025-12-10 20:14:45,721 - INFO - Loading table olist_order_items_dataset with shape (112650, 7)
+2025-12-10 20:14:50,926 - INFO - Loaded successfully: olist_order_items_dataset, time taken 5.2 seconds
+2025-12-10 20:14:51,031 - INFO - Loading table olist_order_payments_dataset with shape (103886, 5)
+2025-12-10 20:14:55,567 - INFO - Loaded successfully: olist_order_payments_dataset, time taken 4.54 seconds
+2025-12-10 20:14:55,944 - INFO - Loading table olist_order_reviews_dataset with shape (99224, 7)
+2025-12-10 20:15:00,652 - INFO - Loaded successfully: olist_order_reviews_dataset, time taken 4.71 seconds
+2025-12-10 20:15:00,704 - INFO - Loading table olist_products_dataset with shape (32951, 9)
+2025-12-10 20:15:03,526 - INFO - Loaded successfully: olist_products_dataset, time taken 2.82 seconds
+2025-12-10 20:15:03,532 - INFO - Loading table olist_sellers_dataset with shape (3095, 4)
+2025-12-10 20:15:03,910 - INFO - Loaded successfully: olist_sellers_dataset, time taken 0.38 seconds
+2025-12-10 20:15:03,911 - INFO - Loading table product_category_name_translation with shape (71, 2)
+2025-12-10 20:15:03,987 - INFO - Loaded successfully: product_category_name_translation, time taken 0.08 seconds
