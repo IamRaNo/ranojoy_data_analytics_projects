@@ -9,7 +9,6 @@ A collection of clean, end-to-end data analysis case studies focused on real-wor
 ![SQL](https://img.shields.io/badge/SQL-MySQL-orange)
 ![PowerBI](https://img.shields.io/badge/PowerBI-Dashboards-yellow)
 ![Status](https://img.shields.io/badge/Projects-Active-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
@@ -26,7 +25,6 @@ A collection of clean, end-to-end data analysis case studies focused on real-wor
 # 🔍 **1️⃣ Olist E-commerce Dataset — Review Score Impact Analysis**
 
 <details>
-<summary><strong>📌 Problem Summary</strong></summary>
 
 Customer reviews directly influence seller visibility and revenue. Low scores often stem from delivery delays, unmet expectations, or category-specific issues.  
 Goal: Analyze how **delivery delays, product category, payment method, and price range** correlate with review scores.
@@ -50,7 +48,6 @@ Goal: Analyze how **delivery delays, product category, payment method, and price
 # 🏥 **2️⃣ Synthea Healthcare — Patient Readmission & Care Quality**
 
 <details>
-<summary><strong>📌 Problem Summary</strong></summary>
 
 Hospitals face high load when patients are readmitted soon after discharge.  
 Using encounters, conditions, procedures, and care plans, we identify **clinical patterns, chronic conditions, and treatment gaps** that contribute to early readmission.
@@ -75,7 +72,6 @@ Using encounters, conditions, procedures, and care plans, we identify **clinical
 # 🎓 **3️⃣ OULAD — Student Dropout & Retention Analysis**
 
 <details>
-<summary><strong>📌 Problem Summary</strong></summary>
 
 Many students register for courses but fail to complete them.  
 This project analyzes **demographic differences, registration behavior, assessment trends, and online engagement** to identify dropout drivers.
