@@ -16,6 +16,3 @@ Goal: Analyze how **delivery delays, product category, payment method, and price
 - Feature Engineering (delivery delays, price buckets, volume metrics)  
 - Data Visualization (Seaborn, Matplotlib)  
 - Reporting & Insight Summaries  
-
-👉 **[Read Full Report](https://www.notion.so/Reports-2b70c02bb1c7805cb0e1fe3a18fe5cb0?pvs=21)**
-
