@@ -55,7 +55,6 @@ def plot_kde(column,data,line_val = .95):
 #______________________________________________________________________________
 # For Bar Plot of Categorical Type Column and Target Column
 def percentage_in_that_class(column, data, target, orient):
-
     df = (
         data.groupby(column)[target]
         .value_counts(normalize=True)
@@ -85,31 +84,36 @@ def percentage_in_that_class(column, data, target, orient):
         )
     for c in ax.containers:
         ax.bar_label(c)
-
     plt.title(f'Percentage of {column} from each {target} class', weight='bold')
 
 #______________________________________________________________________________
 # For KDE Plot in Different Target Classes
 def kde_in_all_class(column,data,target):
+    mini = data[column].min()
+    maxi = data[column].max()
     sns.kdeplot(x = column,
                 hue = target,
                 data=data
                 )
+    plt.xticks(np.linspace(mini,maxi,20).astype('int'))
     plt.title(f"Distribution of {column} by {target}")
 
 #______________________________________________________________________________
 # For Box Plot in Different Target Classes
 def box_in_all_class(column,data,target):
+    mini = data[column].min()
+    maxi = data[column].max()
     sns.boxplot(x = column,
                 hue = target,
                 data=data
                 )
+    plt.xticks(np.linspace(mini,maxi,20).astype('int'))
     plt.title(f"Distribution of {column} by {target}")
 
 #______________________________________________________________________________
 # For Scatterplot in Different Target Classes
 def scatter_in_all_class(column,target,data):
-    plt.scatterplot(x = column,
+    plt.scatter(x = column,
                     y=target,
                     data=data,
                     color = 'teal')
