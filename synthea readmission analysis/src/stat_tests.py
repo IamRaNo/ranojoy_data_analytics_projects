@@ -1,4 +1,3 @@
-
 from scipy.stats import levene,ttest_ind,chi2_contingency,shapiro,mannwhitneyu
 import numpy as np
 
@@ -59,7 +58,6 @@ def run_mannwhitney(data, group_col, value_col, val):
         "strength": strength
     }
 
-
 def ttest_strength(data, group_col, value_col, val):
     """
     Returns Cohen's d and its strength classification.
@@ -79,6 +77,8 @@ def ttest_strength(data, group_col, value_col, val):
     else:
         strength = "strong"
     return d, strength
+
+#_____________________________________________________________________________
 
 
 def numerical_test(data, group_col, value_col, val):
@@ -108,6 +108,7 @@ def chi_sqared_test(ct):
     stat, p, dof, expected = chi2_contingency(ct)
     n = ct.sum().sum()
     r, k = ct.shape
+    result = "Reject null (groups different)" if p < 0.05 else "Fail to reject null (groups similar)"
     cramer_v = np.sqrt(stat / (n * (min(r, k) - 1)))
     # Strength interpretation
     if cramer_v < 0.1:
@@ -117,6 +118,7 @@ def chi_sqared_test(ct):
     else:
         strength = "Strong"
     print(f"Chi-square p-value: {p:.5f}")
+    print(result)
     print(f"Cramer's V: {cramer_v:.3f} → {strength}")
 
 
