@@ -15,15 +15,13 @@ def plot_pie(column,data):
           round(2).
           reset_index(name = 'percentage')
           )
-    explode = [0.1 if p == df['percentage'].max() else 0 for p in df['percentage']]
     plt.pie(x = 'percentage',
             data= df,
             labels=df[column],
             autopct="%.2f%%",
             colors=plt.cm.tab20.colors,
             shadow=True,
-            startangle= 60,
-            explode=explode,
+            startangle= 200,
             textprops={'size': 'smaller'},
             wedgeprops={'edgecolor':'white'})
     plt.title(f"Distribution of {column}",weight = 'bold')
