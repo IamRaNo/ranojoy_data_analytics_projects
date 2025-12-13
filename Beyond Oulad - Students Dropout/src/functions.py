@@ -59,3 +59,24 @@ def find_nulls(table):
             from_dict(dict,orient='index',columns=['null_values']).
             reset_index().
             rename(columns={'index':'column_names'}))
+
+def get_project_root(project_name="ranojoy_data_analytics_projects"):
+    """
+    Universally finds the project root.
+    1. Checks if we are inside the project (standard usage).
+    2. Checks if we are above the project (your specific usage).
+    """
+    current_path = Path.cwd()
+    # CASE 1: Standard Usage (Running from inside the repo)
+    if project_name in str(current_path):
+        while current_path.name != project_name:
+            current_path = current_path.parent
+        return current_path
+    # We search specifically for the project folder inside the current directory
+    # limiting depth to 4 levels to keep it fast.
+    else:
+        # rglob searches recursively for the folder name
+        for path in current_path.rglob(project_name):
+            if path.is_dir():
+                return path
+        raise FileNotFoundError(f"Could not find project: {project_name}")
