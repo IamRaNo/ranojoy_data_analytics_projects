@@ -137,15 +137,15 @@ def percentage_in_that_class(column, data, target, orient='v'):
     
     if orient == 'h':
         sns.barplot(y=column, x='pct', data=df, hue=target, 
-                    edgecolor='white', ax=ax)
+                    edgecolor='black', ax=ax,palette='tab20')
         ax.set_xlabel("Percentage (%)")
     else:
         sns.barplot(x=column, y='pct', data=df, hue=target, 
-                    edgecolor='white', ax=ax)
+                    edgecolor='black', ax=ax,palette='tab20')
         ax.set_ylabel("Percentage (%)")
 
     for c in ax.containers:
-        ax.bar_label(c, fmt='%.1f%%', padding=3, fontsize=10)
+        ax.bar_label(c, fmt='%.2f%%', padding=3, fontsize=10)
 
     ax.legend(title=target, bbox_to_anchor=(1, 1))
     
