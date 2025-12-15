@@ -25,17 +25,11 @@ def _check_normality(g1, g2):
     return is_normal, "Shapiro-Wilk Test"
 
 def _check_variance(g1, g2):
-    """
-    Checks for equal variance using Levene's Test.
-    """
     stat, p = levene(g1, g2)
     equal_var = p >= 0.05
     return equal_var, p
 
 def _calculate_cohens_d(g1, g2):
-    """
-    Calculates Cohen's d effect size for T-Test.
-    """
     n1, n2 = len(g1), len(g2)
     s1, s2 = np.std(g1, ddof=1), np.std(g2, ddof=1)
     
@@ -52,9 +46,6 @@ def _calculate_cohens_d(g1, g2):
     return d, strength
 
 def _calculate_rank_biserial(u_stat, n1, n2):
-    """
-    Calculates Rank-Biserial Correlation for Mann-Whitney.
-    """
     rbc = 1 - (2 * u_stat) / (n1 * n2)
     abs_rbc = abs(rbc)
     
@@ -70,10 +61,6 @@ def _calculate_rank_biserial(u_stat, n1, n2):
 # ==========================================
 
 def compare_means(data, group_col, value_col, val):
-    """
-    Orchestrates the comparison of two groups.
-    Automatically chooses between T-Test (Parametric) and Mann-Whitney (Non-Parametric).
-    """
     # 1. Prepare Data
     g1 = data[data[group_col] == val][value_col].dropna()
     g2 = data[data[group_col] != val][value_col].dropna()
@@ -121,10 +108,6 @@ def compare_means(data, group_col, value_col, val):
 
 
 def test_association(ct):
-    """
-    Performs a robust Chi-Square test with automatic Fisher's Exact fallback.
-    Expects a pandas crosstab as input.
-    """
     print("\n=== Categorical Association Test ===")
     
     # 1. Run Basic Chi-Square
