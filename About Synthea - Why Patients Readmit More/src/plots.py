@@ -242,54 +242,6 @@ def scatter_in_all_class(column, target, data):
                         title=f"Relationship: {column} vs {target}", 
                         subtitle="Scatter plot to identify correlation")
 
-# -----------------------------------------------------------------------------
-# 100% Stacked Bar Plot (Category vs Category)
-# -----------------------------------------------------------------------------
-def plot_100_percent_stacked(crosstab, orient='v'):
-    """
-    Plots a 100% stacked bar chart from a pre-calculated crosstab.
-    """
-    ax = plt.gca()
-    
-    # Determine plot type
-    kind = 'bar' if orient == 'v' else 'barh'
-    
-    # RANDOMIZER: Stacked plots need distinct colors (e.g. 2 or 3 specific colors)
-    # We grab a random palette and slice the first N colors needed
-    n_cols = len(crosstab.columns)
-    colors = _get_random_palette(n_colors=n_cols)
-    
-    # Plotting
-    crosstab.plot(kind=kind, stacked=True, width=0.85, 
-                  edgecolor='white', linewidth=1.5, ax=ax, color=colors)
-    
-    # Add Labels
-    for c in ax.containers:
-        labels = [f'{v*100:.1f}%' if v > 0.05 else '' for v in c.datavalues]
-        ax.bar_label(c, labels=labels, label_type='center', 
-                     fontsize=11, color='white', fontweight='bold', padding=0)
-
-    # Formatting based on orientation
-    if orient == 'v':
-        ax.axhline(y=0.5, color='#fc4f30', linestyle='--', alpha=0.8, linewidth=2)
-        ax.text(ax.get_xlim()[1], 0.5, ' 50%', color='#fc4f30', 
-                fontweight='bold', va='center', fontsize=10)
-        ax.set_ylabel("Proportion")
-        ax.set_xlabel(crosstab.index.name.replace('_', ' ').title() if crosstab.index.name else "")
-        plt.xticks(rotation=0)
-    else:
-        ax.axvline(x=0.5, color='#fc4f30', linestyle='--', alpha=0.8, linewidth=2)
-        ax.text(0.5, ax.get_ylim()[1], ' 50%', color='#fc4f30', 
-                fontweight='bold', ha='center', va='bottom', fontsize=10)
-        ax.set_xlabel("Proportion")
-        ax.set_ylabel(crosstab.index.name.replace('_', ' ').title() if crosstab.index.name else "")
-
-    ax.legend(title=crosstab.columns.name, bbox_to_anchor=(1.02, 1), loc='upper left')
-
-    title_text = f"Breakdown of {crosstab.columns.name} by {crosstab.index.name}"
-    _add_title_subtitle(ax, 
-                        title=title_text, 
-                        subtitle="100% Stacked comparison showing relative risk")
 
 # -----------------------------------------------------------------------------
 # Heatmap

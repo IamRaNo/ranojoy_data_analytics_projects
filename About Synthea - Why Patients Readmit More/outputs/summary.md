@@ -1,1 +1,0 @@
-- ***`urgentcare` and `ambulatory` class showed a high percentage of readmission, after doing statistical test, we can validate that patients of these classes are more likely to readmit more***
