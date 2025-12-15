@@ -310,6 +310,9 @@ def plot_stacked(crosstab, orient='v'):
                         title=title_text, 
                         subtitle="100% Stacked comparison showing relative risk")
     
+# -----------------------------------------------------------------------------
+# Line Plot (Category vs Numbers)
+# -----------------------------------------------------------------------------
 def plot_risk_by_bins(data, x_col, target_col, bins=10):
     """
     Bins a numerical variable and plots the Target Probability (Risk) for each bin.
