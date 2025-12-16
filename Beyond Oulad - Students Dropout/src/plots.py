@@ -327,7 +327,7 @@ def plot_risk_by_bins(data, x_col, target_col, bins=10):
     if df[target_col].dtype == 'object':
         # Check if values look like YES/NO
         unique_vals = df[target_col].unique()
-        if 'YES' in unique_vals or 'NO' in unique_vals:
+        if 'Withdrawn' in unique_vals or 'Stayed' in unique_vals:
             df[target_col] = df[target_col].map({'Withdrawn': 1, 'Stayed': 0})
             print(f"Note: Converted '{target_col}' from Withdrawn/Stayed to 1/0 for this plot.")
     
