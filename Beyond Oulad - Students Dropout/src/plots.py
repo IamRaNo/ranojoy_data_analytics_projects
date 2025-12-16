@@ -328,8 +328,8 @@ def plot_risk_by_bins(data, x_col, target_col, bins=10):
         # Check if values look like YES/NO
         unique_vals = df[target_col].unique()
         if 'YES' in unique_vals or 'NO' in unique_vals:
-            df[target_col] = df[target_col].map({'YES': 1, 'NO': 0})
-            print(f"Note: Converted '{target_col}' from YES/NO to 1/0 for this plot.")
+            df[target_col] = df[target_col].map({'Withdrawn': 1, 'Stayed': 0})
+            print(f"Note: Converted '{target_col}' from Withdrawn/Stayed to 1/0 for this plot.")
     
     # 3. Create Bins (Deciles)
     try:
@@ -351,7 +351,7 @@ def plot_risk_by_bins(data, x_col, target_col, bins=10):
     ax.fill_between(x_labels, risk_data.values, color=line_color, alpha=0.1)
 
     # Formatting
-    ax.set_ylabel("Readmission Probability")
+    ax.set_ylabel("Withdrawn Probability")
     ax.set_xlabel(f"{x_col.replace('_', ' ').title()} (Binned)")
     plt.xticks(rotation=45, ha='right', fontsize=10)
     
@@ -362,4 +362,4 @@ def plot_risk_by_bins(data, x_col, target_col, bins=10):
 
     _add_title_subtitle(ax, 
                         title=f"Risk Curve: {x_col}", 
-                        subtitle="How readmission probability changes as value increases")
+                        subtitle="How Withdrawn probability changes as value increases")
